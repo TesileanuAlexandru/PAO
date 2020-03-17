@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="8b934c49-c351-4a6d-8c12-face21a3b720" name="Default Changelist" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="ProjectId" id="1ZC8PNRx8vtzYwRtAdOUvtkjP5z" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="project.structure.last.edited" value="Modules" />
+    <property name="project.structure.proportion" value="0.0" />
+    <property name="project.structure.side.proportion" value="0.0" />
+  </component>
+  <component name="RunManager">
+    <configuration name="ZooTest" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="polimorfism.zoo.ZooTest" />
+      <module name="course_3" />
+      <option name="PROGRAM_PARAMETERS" value="8" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="polimorfism.zoo.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.ZooTest" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="8b934c49-c351-4a6d-8c12-face21a3b720" name="Default Changelist" comment="" />
+      <created>1584331690896</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1584331690896</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="455" y="208" key="#Project_Structure" timestamp="1584331726398">
+      <screen x="0" y="0" width="1920" height="1050" />
+    </state>
+    <state x="455" y="208" key="#Project_Structure/0.0.1920.1050@0.0.1920.1050" timestamp="1584331726398" />
+    <state x="828" y="183" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1584337349580">
+      <screen x="0" y="0" width="1920" height="1050" />
+    </state>
+    <state x="828" y="183" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1920.1050@0.0.1920.1050" timestamp="1584337349580" />
+    <state x="1245" y="238" key="#com.intellij.ide.util.MemberChooser" timestamp="1584336846059">
+      <screen x="0" y="0" width="1920" height="1050" />
+    </state>
+    <state x="1245" y="238" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1050@0.0.1920.1050" timestamp="1584336846059" />
+    <state width="914" height="351" key="GridCell.Tab.0.bottom" timestamp="1584337362267">
+      <screen x="0" y="0" width="1920" height="1050" />
+    </state>
+    <state width="914" height="351" key="GridCell.Tab.0.bottom/0.0.1920.1050@0.0.1920.1050" timestamp="1584337362267" />
+    <state width="914" height="351" key="GridCell.Tab.0.center" timestamp="1584337362267">
+      <screen x="0" y="0" width="1920" height="1050" />
+    </state>
+    <state width="914" height="351" key="GridCell.Tab.0.center/0.0.1920.1050@0.0.1920.1050" timestamp="1584337362267" />
+    <state width="914" height="351" key="GridCell.Tab.0.left" timestamp="1584337362267">
+      <screen x="0" y="0" width="1920" height="1050" />
+    </state>
+    <state width="914" height="351" key="GridCell.Tab.0.left/0.0.1920.1050@0.0.1920.1050" timestamp="1584337362267" />
+    <state width="914" height="351" key="GridCell.Tab.0.right" timestamp="1584337362267">
+      <screen x="0" y="0" width="1920" height="1050" />
+    </state>
+    <state width="914" height="351" key="GridCell.Tab.0.right/0.0.1920.1050@0.0.1920.1050" timestamp="1584337362267" />
+    <state width="914" height="351" key="GridCell.Tab.1.bottom" timestamp="1584337362268">
+      <screen x="0" y="0" width="1920" height="1050" />
+    </state>
+    <state width="914" height="351" key="GridCell.Tab.1.bottom/0.0.1920.1050@0.0.1920.1050" timestamp="1584337362268" />
+    <state width="914" height="351" key="GridCell.Tab.1.center" timestamp="1584337362268">
+      <screen x="0" y="0" width="1920" height="1050" />
+    </state>
+    <state width="914" height="351" key="GridCell.Tab.1.center/0.0.1920.1050@0.0.1920.1050" timestamp="1584337362268" />
+    <state width="914" height="351" key="GridCell.Tab.1.left" timestamp="1584337362268">
+      <screen x="0" y="0" width="1920" height="1050" />
+    </state>
+    <state width="914" height="351" key="GridCell.Tab.1.left/0.0.1920.1050@0.0.1920.1050" timestamp="1584337362268" />
+    <state width="914" height="351" key="GridCell.Tab.1.right" timestamp="1584337362268">
+      <screen x="0" y="0" width="1920" height="1050" />
+    </state>
+    <state width="914" height="351" key="GridCell.Tab.1.right/0.0.1920.1050@0.0.1920.1050" timestamp="1584337362268" />
+    <state x="1136" y="349" key="com.intellij.ide.util.TipDialog" timestamp="1584457958857">
+      <screen x="0" y="0" width="1920" height="1050" />
+    </state>
+    <state x="1136" y="349" key="com.intellij.ide.util.TipDialog/0.0.1920.1050@0.0.1920.1050" timestamp="1584457958857" />
+  </component>
+</project>
