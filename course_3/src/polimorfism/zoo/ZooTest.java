@@ -10,6 +10,8 @@ import polimorfism.zoo.omnivor.Urs;
 
 public class ZooTest {
     public static void main(String[] args){
+
+
         Integer nrAnimaleZoo = Integer.valueOf(args[0]);
 
         //Scanner scanner = new Scanner(System.in);

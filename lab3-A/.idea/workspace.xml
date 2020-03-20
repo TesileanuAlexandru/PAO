@@ -1,7 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="de3421d7-cc25-4826-84c5-df84adc64aff" name="Default Changelist" comment="" />
+    <list default="true" id="de3421d7-cc25-4826-84c5-df84adc64aff" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/candy/stuff/CandyBag.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/candy/stuff/CandyTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../course_3/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../course_3/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../course_3/src/polimorfism/zoo/Zoo.java" beforeDir="false" afterPath="$PROJECT_DIR$/../course_3/src/polimorfism/zoo/Zoo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../course_3/src/polimorfism/zoo/ZooTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/../course_3/src/polimorfism/zoo/ZooTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/candy/stuff/CandyBox.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/candy/stuff/CandyBox.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/candy/stuff/sweets/Heidi.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/candy/stuff/sweets/Heidi.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/candy/stuff/sweets/Lindt.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/candy/stuff/sweets/Lindt.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/candy/stuff/sweets/Milka.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/candy/stuff/sweets/Milka.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -14,7 +27,11 @@
       </list>
     </option>
   </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
   <component name="ProjectId" id="1ZGfpzGjsTzbffeUsgwSdXBTB23" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showExcludedFiles" value="true" />
@@ -22,9 +39,31 @@
   </component>
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.0" />
+  </component>
+  <component name="RunManager">
+    <configuration name="CandyTest" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="candy.stuff.CandyTest" />
+      <module name="lab3-A" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="candy.stuff.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.CandyTest" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SvnConfiguration">
     <configuration />
@@ -44,9 +83,33 @@
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
     <state x="552" y="183" key="#Project_Structure/0.0.1920.1050@0.0.1920.1050" timestamp="1584470545081" />
-    <state x="285" y="244" key="#com.intellij.ide.util.MemberChooser" timestamp="1584471483364">
+    <state x="0" y="183" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1584746452504">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
-    <state x="285" y="244" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1050@0.0.1920.1050" timestamp="1584471483364" />
+    <state x="0" y="183" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1920.1050@0.0.1920.1050" timestamp="1584746452504" />
+    <state x="285" y="244" key="#com.intellij.ide.util.MemberChooser" timestamp="1584747484009">
+      <screen x="0" y="0" width="1920" height="1050" />
+    </state>
+    <state x="285" y="244" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1050@0.0.1920.1050" timestamp="1584747484009" />
+    <state width="1877" height="285" key="GridCell.Tab.0.bottom" timestamp="1584748410357">
+      <screen x="0" y="0" width="1920" height="1050" />
+    </state>
+    <state width="1877" height="285" key="GridCell.Tab.0.bottom/0.0.1920.1050@0.0.1920.1050" timestamp="1584748410357" />
+    <state width="1877" height="285" key="GridCell.Tab.0.center" timestamp="1584748410356">
+      <screen x="0" y="0" width="1920" height="1050" />
+    </state>
+    <state width="1877" height="285" key="GridCell.Tab.0.center/0.0.1920.1050@0.0.1920.1050" timestamp="1584748410356" />
+    <state width="1877" height="285" key="GridCell.Tab.0.left" timestamp="1584748410356">
+      <screen x="0" y="0" width="1920" height="1050" />
+    </state>
+    <state width="1877" height="285" key="GridCell.Tab.0.left/0.0.1920.1050@0.0.1920.1050" timestamp="1584748410356" />
+    <state width="1877" height="285" key="GridCell.Tab.0.right" timestamp="1584748410357">
+      <screen x="0" y="0" width="1920" height="1050" />
+    </state>
+    <state width="1877" height="285" key="GridCell.Tab.0.right/0.0.1920.1050@0.0.1920.1050" timestamp="1584748410357" />
+    <state x="143" y="247" key="run.anything.popup" timestamp="1584744555358">
+      <screen x="0" y="0" width="1920" height="1050" />
+    </state>
+    <state x="143" y="247" key="run.anything.popup/0.0.1920.1050@0.0.1920.1050" timestamp="1584744555358" />
   </component>
 </project>

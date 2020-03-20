@@ -1,7 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="8b934c49-c351-4a6d-8c12-face21a3b720" name="Default Changelist" comment="" />
+    <list default="true" id="8b934c49-c351-4a6d-8c12-face21a3b720" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/../lab3-A/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../lab3-A/src/candy/stuff/CandyBag.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../lab3-A/src/candy/stuff/CandyTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/polimorfism/zoo/Zoo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/polimorfism/zoo/Zoo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/polimorfism/zoo/ZooTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/polimorfism/zoo/ZooTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../lab3-A/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../lab3-A/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../lab3-A/src/candy/stuff/CandyBox.java" beforeDir="false" afterPath="$PROJECT_DIR$/../lab3-A/src/candy/stuff/CandyBox.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../lab3-A/src/candy/stuff/sweets/Heidi.java" beforeDir="false" afterPath="$PROJECT_DIR$/../lab3-A/src/candy/stuff/sweets/Heidi.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../lab3-A/src/candy/stuff/sweets/Lindt.java" beforeDir="false" afterPath="$PROJECT_DIR$/../lab3-A/src/candy/stuff/sweets/Lindt.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../lab3-A/src/candy/stuff/sweets/Milka.java" beforeDir="false" afterPath="$PROJECT_DIR$/../lab3-A/src/candy/stuff/sweets/Milka.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -14,7 +27,11 @@
       </list>
     </option>
   </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
   <component name="ProjectId" id="1ZC8PNRx8vtzYwRtAdOUvtkjP5z" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showExcludedFiles" value="true" />
@@ -22,6 +39,8 @@
   </component>
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="last_opened_file_path" value="$USER_HOME$/Desktop/lab3-A" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.0" />
@@ -73,6 +92,10 @@
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
     <state x="1245" y="238" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1050@0.0.1920.1050" timestamp="1584336846059" />
+    <state x="397" y="412" key="FileChooserDialogImpl" timestamp="1584744245125">
+      <screen x="0" y="0" width="1920" height="1050" />
+    </state>
+    <state x="397" y="412" key="FileChooserDialogImpl/0.0.1920.1050@0.0.1920.1050" timestamp="1584744245125" />
     <state width="914" height="351" key="GridCell.Tab.0.bottom" timestamp="1584337362267">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
@@ -105,9 +128,13 @@
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
     <state width="914" height="351" key="GridCell.Tab.1.right/0.0.1920.1050@0.0.1920.1050" timestamp="1584337362268" />
-    <state x="1136" y="349" key="com.intellij.ide.util.TipDialog" timestamp="1584457958857">
+    <state x="1136" y="349" key="com.intellij.ide.util.TipDialog" timestamp="1584470551183">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
-    <state x="1136" y="349" key="com.intellij.ide.util.TipDialog/0.0.1920.1050@0.0.1920.1050" timestamp="1584457958857" />
+    <state x="1136" y="349" key="com.intellij.ide.util.TipDialog/0.0.1920.1050@0.0.1920.1050" timestamp="1584470551183" />
+    <state x="0" y="291" key="new project wizard" timestamp="1584470537345">
+      <screen x="0" y="0" width="1920" height="1050" />
+    </state>
+    <state x="0" y="291" key="new project wizard/0.0.1920.1050@0.0.1920.1050" timestamp="1584470537345" />
   </component>
 </project>

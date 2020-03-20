@@ -1,7 +1,6 @@
 package polimorfism.zoo;
 
-public class Zoo {
-
+public class Zoo
     private final int nrMaxAnimale;
     Animal[] animaleZoo;
     private int indexCurent;
