@@ -1,4 +1,4 @@
 public interface TransportaMarfa {
-    void incarca();
+    void incarca(Incarcatura i);
     void descarca();
 }

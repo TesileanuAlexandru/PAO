@@ -2,7 +2,7 @@ public class Flota {
     private int capacitateFlota;
     private int index;
     Autoturism[] vehicule;
-    //TODO tipul de autoturism il stiu numai la rulare, deci nu pot aplica metode din Duba sau Autobuz, FIX THAT somehow
+    //TODO tipul de autoturism il stiu numai la rulare, deci nu pot aplica metode din Duba sau Autobuz, FIX THAT somehow  Fix: CAST
 
     public Flota(int capacitateFlota) {
         if (capacitateFlota > 0) {

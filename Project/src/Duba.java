@@ -2,17 +2,15 @@ import java.util.concurrent.TimeUnit;
 
 public class Duba extends Autoturism implements TransportaMarfa{
 
-    private float lungime, latime, inaltime;
+    private int capacitatePaleti;
 
-    public Duba(String model, int anFab, boolean isLoaded, float lungime, float latime, float inaltime) {
+    public Duba(String model, int anFab, boolean isLoaded, int capacitatePaleti) {
         super(model, anFab, isLoaded);
-        this.lungime = lungime;
-        this.latime = latime;
-        this.inaltime = inaltime;
+        this.capacitatePaleti = capacitatePaleti;
     }
 
     @Override
-    public void incarca() {
+    public void incarca(Incarcatura incarcatura) {
         if (this.isLoaded == false){
             System.out.println("Se incarca ...");
 
@@ -21,6 +19,9 @@ public class Duba extends Autoturism implements TransportaMarfa{
             } catch (InterruptedException e){
                 System.out.println("Something went terribly wrong: " + e);
             }
+
+            //TODO scade din incarcatura, adaufa in auto prin metoda rucsacului greedy
+
 
             System.out.println("Done!");
             this.isLoaded = true;
