@@ -16,15 +16,15 @@ public class ItemIncarcatura implements Comparable<ItemIncarcatura>{
     @Override
     public int compareTo(ItemIncarcatura o) {
 
-        float calcul1 = (1 / this.timpRamasExpediere) / this.nrPaletiIncarcat;
-        float calcul2 = (1 / o.timpRamasExpediere) / o.nrPaletiIncarcat;
+        float calcul1 = (1F / (float) this.timpRamasExpediere) / (float) this.nrPaletiIncarcat;
+        float calcul2 = (1F / (float) o.timpRamasExpediere) / (float) o.nrPaletiIncarcat;
 
         if(calcul1 < calcul2){
-            return -1;
+            return 1;
         }else if(calcul1 == calcul2){
             return  0;
         }else{
-            return 1;
+            return -1;
         }
     }
 

@@ -29,8 +29,7 @@ public class Incarcatura {
     }
 
     public void sorteazaItemIncarcatura(){
-        Arrays.sort(this.itemIncarcatura);
-        //TODO FIX IT, nu merge din ceva motive
+        Arrays.sort(this.itemIncarcatura );
 
     }
 
