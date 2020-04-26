@@ -31,7 +31,7 @@ public class CSVReader {
     public List<String> readLine() throws IOException {
         /**
          Aceasta metoda returneaza o lista de String cu toate cuvintele de pe o line.
-         @return Vector de String
+         @return Lista de String
          */
         String line = "";
         List<String> values = new ArrayList<>();
@@ -43,4 +43,10 @@ public class CSVReader {
         }
         return values;
     }
+
+    public void changePath(String filename) throws  IOException{
+        this.file = new File(this.path + filename);
+        this.br = new BufferedReader((new FileReader(this.path + filename)));
+    }
+
 }

@@ -4,7 +4,7 @@ public class Duba extends Autoturism implements TransportaMarfa{
 
     private int capacitatePaleti;
 
-    public Duba(String model, int anFab, boolean isLoaded, int capacitatePaleti) {
+    public Duba(String model, int anFab,boolean isLoaded, int capacitatePaleti) {
         super(model, anFab, isLoaded);
         this.capacitatePaleti = capacitatePaleti;
     }
