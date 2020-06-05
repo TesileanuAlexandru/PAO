@@ -45,11 +45,12 @@ public class DBAccess {
         }catch (Exception e){
             System.out.println(e);
             e.printStackTrace();
+
         }
     }
     public void adaugaFlota(Flota flota){
         try{
-            queryStatement.executeUpdate("INSERT INTO FLOTE VALUES ( " + flota.getCapacitateFlota() +" "+ flota.hashCode()  + ")" );
+            queryStatement.executeUpdate("INSERT INTO FLOTE VALUES ( " + flota.getCapacitateFlota() +", "+ flota.hashCode()  + ")" );
         }catch (Exception e){
             System.out.println(e);
             e.printStackTrace();
