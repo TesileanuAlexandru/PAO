@@ -33,6 +33,10 @@ public class Test {
         }
         System.out.println(safetyNet);
 
+        DBAccess.getInstance().insertDuba(dube.get(0));
+
+
+        /*
         //Change the reader's path in order to read some buses
         reader.changePath("buses.csv");
 
@@ -83,6 +87,7 @@ public class Test {
 
         //Let's create a fleet
 
+        /*
         Flota flota = new Flota(2); //TODO nu e cel mai elegant mod de a face log ul, de revuzit. O solutie ar fi o clasa utilitara care sa scrie in log
         flota.adaugaAututurism(autobuze.get(0));
         flota.adaugaAututurism(dube.get(1));
@@ -136,4 +141,6 @@ public class Test {
 
          */
     }
+
+
 }

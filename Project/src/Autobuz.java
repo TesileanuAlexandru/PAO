@@ -1,14 +1,27 @@
 import javax.sound.midi.Soundbank;
 import java.sql.SQLOutput;
+import java.util.UUID;
 import java.util.concurrent.TimeUnit;
 
 public class Autobuz extends Autoturism implements TransportaOameni{
 
     private int nrLocuri;
+    public static int ID = DBAccess.getInstance().getMaxIndexAutoturisme();
+    public int DB_ID = -1;
+
+    public int getNrLocuri() {
+        return nrLocuri;
+    }
+
+    @Override
+    public int hashCode() {
+        return DB_ID != -1 ? DB_ID : ID;
+    }
 
     public Autobuz(String model, int anFab, boolean isLoaded, int nrLocuri) {
         super(model, anFab, isLoaded);
         this.nrLocuri = nrLocuri;
+        ID+=1;
     }
 
     @Override

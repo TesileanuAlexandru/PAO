@@ -1,16 +1,36 @@
+import java.util.UUID;
+
 public class ItemIncarcatura implements Comparable<ItemIncarcatura>{
 
     private int timpRamasExpediere;
     private int nrPaletiIncarcat;
+    private static int ID = DBAccess.getInstance().getMaxItemIncarcatura();
+    public int DB_ID = -1;
+    public int ID_INCARCATURA = -1;
 
-    public ItemIncarcatura(int timpRamasExpediere, int nrPaletiIncarcat) {
-        this.timpRamasExpediere = timpRamasExpediere;
-        this.nrPaletiIncarcat = nrPaletiIncarcat;
+    public int getTimpRamasExpediere() {
+        return timpRamasExpediere;
     }
 
-    public ItemIncarcatura(ItemIncarcatura other) {
+    public int getNrPaletiIncarcat() {
+        return nrPaletiIncarcat;
+    }
+
+    @Override
+    public int hashCode() {
+        return DB_ID != -1 ? DB_ID : ID;
+    }
+
+    ItemIncarcatura(int timpRamasExpediere, int nrPaletiIncarcat) {
+        this.timpRamasExpediere = timpRamasExpediere;
+        this.nrPaletiIncarcat = nrPaletiIncarcat;
+        ID += 1;
+    }
+
+    ItemIncarcatura(ItemIncarcatura other) {
         this.nrPaletiIncarcat = other.nrPaletiIncarcat;
         this.timpRamasExpediere = other.timpRamasExpediere;
+        ID += 1;
     }
 
     @Override

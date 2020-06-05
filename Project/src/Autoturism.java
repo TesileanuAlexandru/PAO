@@ -3,12 +3,27 @@ public abstract class Autoturism {
     private String model;
     private int anFab;
     protected boolean isLoaded;
+    public int idflota = -1;
 
     public Autoturism(String model, int anFab, boolean isLoaded) {
         this.model = model;
         this.anFab = anFab;
         this.isLoaded = isLoaded;
     }
+
+    public String getModel() {
+        return model;
+    }
+
+    public int getAnFab() {
+        return anFab;
+    }
+
+    public boolean getisLoaded() {
+        return isLoaded;
+    }
+
+
     public Object showStatus(String output){
         /**
          Aceasta metoda returneaza statusul autoturismului in diferite moduri. !Pentru int necesita conversie: (int).

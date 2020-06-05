@@ -5,14 +5,28 @@ import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
+import java.util.UUID;
 
 public class Flota {
     private int capacitateFlota;
     private int index;
     Autoturism[] vehicule;
-    //TODO tipul de autoturism il stiu numai la rulare, deci nu pot aplica metode din Duba sau Autobuz, FIX THAT somehow  Fix: CAST
+    public static int ID = DBAccess.getInstance().getMaxFlote();
+    public int DB_ID = -1;
+
+
+
+    public int getCapacitateFlota() {
+        return capacitateFlota;
+    }
+
+    @Override
+    public int hashCode() {
+        return DB_ID != -1 ? DB_ID : ID;
+    }
 
     public Flota(int capacitateFlota) {
+        ID += 1;
         if (capacitateFlota > 0) {
             this.capacitateFlota = capacitateFlota;
             vehicule = new Autoturism[capacitateFlota];
@@ -38,6 +52,7 @@ public class Flota {
 
     public boolean adaugaAututurism(Autoturism autoturism){
         if(index < capacitateFlota){
+            autoturism.idflota = this.hashCode();
             vehicule[index] = autoturism;
             System.out.println("Ati adaugat un autoturism de tip " + autoturism.getClass().getSimpleName() + " la pozitia " + index++);
 
@@ -58,4 +73,6 @@ public class Flota {
             return false;
         }
     }
+
+
 }
