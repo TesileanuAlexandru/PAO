@@ -9,9 +9,9 @@ import java.util.UUID;
 
 public class Flota {
     private int capacitateFlota;
-    private int index;
+    private int index = 0;
     Autoturism[] vehicule;
-    public static int ID = DBAccess.getInstance().getMaxFlote();
+    public static int ID = DBAccess.getInstance().getMaxFlote() + 1;
     public int DB_ID = -1;
 
 
@@ -22,10 +22,11 @@ public class Flota {
 
     @Override
     public int hashCode() {
-        return DB_ID != -1 ? DB_ID : ID;
+        return DB_ID;
     }
 
     public Flota(int capacitateFlota) {
+        DB_ID = ID;
         ID += 1;
         if (capacitateFlota > 0) {
             this.capacitateFlota = capacitateFlota;
@@ -74,5 +75,24 @@ public class Flota {
         }
     }
 
+    public int getIndex() {
+        return index;
+    }
+
+    public static Object[] getFlotaTableHeader(){
+        Object[] ret = {"Capacitate Flota", "ID"};
+        return ret;
+    }
+
+    public static Object[][] formatFlotaToObjTable(List <Flota> flote){
+        int len = flote.size();
+        Object[][] arr = new Object[len][2];
+        for(int i = 0; i < len; ++i){
+            arr[i][0] = flote.get(i).getCapacitateFlota();
+            arr[i][1] = flote.get(i).hashCode();
+        }
+        return arr;
+
+    }
 
 }

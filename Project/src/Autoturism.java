@@ -5,6 +5,7 @@ public abstract class Autoturism {
     protected boolean isLoaded;
     public int idflota = -1;
 
+
     public Autoturism(String model, int anFab, boolean isLoaded) {
         this.model = model;
         this.anFab = anFab;

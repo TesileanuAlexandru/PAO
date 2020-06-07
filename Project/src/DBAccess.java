@@ -18,6 +18,7 @@ public class DBAccess {
             conn = DriverManager.getConnection(
                     " jdbc:oracle:thin:@localhost:1521:xe", "student", "STUDENT");
             queryStatement = conn.createStatement();
+            conn.setAutoCommit(true);
         } catch (Exception e) {
             System.out.println(e);
         }
@@ -58,7 +59,7 @@ public class DBAccess {
     }
     public void adaugaItemIncarcatura(ItemIncarcatura item){
         try{
-            queryStatement.executeUpdate("INSERT INTO ITEMEINCARCATURA VALUES ( " + item.getTimpRamasExpediere() + " " + item.getTimpRamasExpediere() + " " + item.hashCode() +", NULL)");
+            queryStatement.executeUpdate("INSERT INTO ITEMEINCARCATURA VALUES ( " + item.getTimpRamasExpediere() + ", " + item.getTimpRamasExpediere() + ", " + item.hashCode() +", NULL)");
         }catch (Exception e){
             System.out.println(e);
             e.printStackTrace();
@@ -66,7 +67,7 @@ public class DBAccess {
     }
     public void adaugaIncarcatura(Incarcatura item){
         try{
-            queryStatement.executeUpdate("INSERT INTO INCARCATURA VALUES ('" + item.getDenumireIncarcatura() +"' " + item.getDimensiuneIncarcatura() + " " + item.hashCode() + ")");
+            queryStatement.executeUpdate("INSERT INTO INCARCATURA VALUES ('" + item.getDenumireIncarcatura() +"', " + item.getDimensiuneIncarcatura() + ", " + item.hashCode() + ")");
         }catch (Exception e){
             System.out.println(e);
             e.printStackTrace();
@@ -74,11 +75,14 @@ public class DBAccess {
     }
     public void updateFlota (Flota flota){ //Updates the field IDFLOTA from autobuze and dube for a certain fleet
         try{
-            for (int i=0; i < flota.vehicule.length; ++i){
+            for (int i=0; i < flota.getIndex(); ++i){
+                Statement stm = conn.createStatement();
                 if(flota.vehicule[i] instanceof Duba) {
-                    queryStatement.executeUpdate("UPDATE TABLE DUBE SET IDFLOTA = " + flota.hashCode() + "WHERE ID = " + flota.vehicule[i].hashCode());
+                    stm.executeUpdate("UPDATE DUBE SET IDFLOTA = " + flota.hashCode() + "WHERE ID = " + flota.vehicule[i].hashCode());
+                    flota.vehicule[i].idflota = flota.hashCode();
                 } else{
-                    queryStatement.executeUpdate("UPDATE TABLE AUTOBUZE SET IDFLOTA = " + flota.hashCode() + "WHERE ID = " + flota.vehicule[i].hashCode());
+                    stm.executeUpdate("UPDATE AUTOBUZE SET IDFLOTA = " + flota.hashCode() + "WHERE ID = " + flota.vehicule[i].hashCode());
+                    flota.vehicule[i].idflota = flota.hashCode();
                 }
             }
         }catch (Exception e){
@@ -88,8 +92,9 @@ public class DBAccess {
     }
     public void updateIncarcatura(Incarcatura incarcatura){
         try{
-            for(int i = 0; i < incarcatura.itemIncarcatura.length; ++i){
-                queryStatement.executeUpdate("UPDATE TABLE ITEMEINCARCATURA SET IDINCARCATURA = " + incarcatura.hashCode() + "WHERE ID = " + incarcatura.itemIncarcatura[i].hashCode());
+            for(int i = 0; i < incarcatura.getIndex(); ++i){
+                queryStatement.executeUpdate("UPDATE ITEMEINCARCATURA SET IDICARCATURA = " + incarcatura.hashCode() + "WHERE ID = " + incarcatura.itemIncarcatura[i].hashCode());
+                incarcatura.itemIncarcatura[i].ID_INCARCATURA = incarcatura.hashCode();
             }
 
         }catch (Exception e){
@@ -101,7 +106,7 @@ public class DBAccess {
         ArrayList<Autobuz> returnable = new ArrayList<Autobuz>();
         try {
 
-            ResultSet resultSet = queryStatement.executeQuery("SELECT * FROM AUTOVUBUZE");
+            ResultSet resultSet = queryStatement.executeQuery("SELECT * FROM AUTOBUZE");
             while(resultSet.next()){
                 String model = resultSet.getString("MODEL");
                 int nrlocuri = resultSet.getInt("NRLOCURI");
@@ -121,7 +126,7 @@ public class DBAccess {
     public List<Duba> getDube(){
         ArrayList<Duba> returnable = new ArrayList<Duba>();
         try{
-            ResultSet resultSet = queryStatement.executeQuery("SELECT * FROM AUTOVUBUZE");
+            ResultSet resultSet = queryStatement.executeQuery("SELECT * FROM DUBE");
             while (resultSet.next()){
                 int capacitatepaleti = resultSet.getInt("CAPACITATEPALETI");
                 int anfab = resultSet.getInt("ANFAB");
@@ -146,7 +151,7 @@ public class DBAccess {
         List<Autobuz> autobuze = this.getAutobuze();
 
         try{
-            ResultSet resultSet = queryStatement.executeQuery("SELECT * FROM AUTOBUZE");
+            ResultSet resultSet = queryStatement.executeQuery("SELECT * FROM FLOTE");
             while (resultSet.next()){
                 int capacitateflota = resultSet.getInt("CAPACITATEFLOTA");
                 int id = resultSet.getInt("ID");
@@ -182,7 +187,7 @@ public class DBAccess {
                 int timpramasexpediere = resultSet.getInt("TIMPRAMASEXPEDIERE");
                 int nrpaletiincarcat = resultSet.getInt("NRPALETIINCARCAT");
                 int id = resultSet.getInt("ID");
-                int idincarcatatura = resultSet.getInt("IDINCARCATURA");
+                int idincarcatatura = resultSet.getInt("IDICARCATURA");
                 ItemIncarcatura item = new ItemIncarcatura(timpramasexpediere,nrpaletiincarcat);
                 item.ID_INCARCATURA = idincarcatatura;
                 item.DB_ID = id;
@@ -229,22 +234,85 @@ public class DBAccess {
         }
     }
 
+    public void deleteDuba(Duba duba){
+        try{
+            queryStatement.executeUpdate("DELETE FROM DUBE WHERE ID = " + duba.hashCode());
+        }catch (Exception e){
+            System.out.println(e);
+            e.printStackTrace();
+        }
+    }
+
+    public void deleteFlota(Flota flota){
+        try {
+            List <Duba> dube = this.getDube();
+            List <Autobuz> autobuze = this.getAutobuze();
+            for (Duba d : dube){
+                if (d.idflota == flota.hashCode()){
+                    queryStatement.executeUpdate("UPDATE DUBE SET IDFLOTA = NULL WHERE ID = " + d.hashCode());
+                }
+            }
+            for (Autobuz a : autobuze){
+                if(a.idflota == flota.hashCode()){
+                    queryStatement.executeUpdate("UPDATE AUTOBUZE SET IDFLOTA = NULL WHERE ID = " + a.hashCode());
+                }
+            }
+
+            queryStatement.executeUpdate("DELETE FROM FLOTE WHERE ID = " + flota.hashCode());
+
+        } catch (Exception e){
+            System.out.println(e);
+            e.printStackTrace();
+        }
+    }
+
+    public void deleteItemIncarcatura(ItemIncarcatura item){
+        try{
+            queryStatement.executeUpdate("DELETE FRM ITEMEINCARCATURA WHERE ID = " + item.hashCode());
+        }catch (Exception e){
+            System.out.println(e);
+            e.printStackTrace();
+        }
+    }
+
+    public void deleteIncarcatura(Incarcatura inc){
+        try{
+            List <ItemIncarcatura> items = this.getItemeIncarcatura();
+            for (ItemIncarcatura i : items){
+                if(i.ID_INCARCATURA == inc.hashCode()){
+                    queryStatement.executeUpdate("UPDATE ITEMEINCARCATURA SET IDINCARCATURA = NULL WHERE ID = " + i.hashCode());
+                }
+            }
+            queryStatement.executeUpdate("DELETE FROM INCARCATURA WHERE ID = " + inc.hashCode());
+        }catch (Exception e){
+            System.out.println(e);
+            e.printStackTrace();
+        }
+    }
 
 
+    public int getMaxAutoturisme(){
 
-
-
-    public int getMaxIndexAutoturisme(){
-        ResultSet maxDube ;
-        ResultSet maxAutobuze;
         int mxD = 0;
         int mxA = 0;
-        try{
-            maxDube = queryStatement.executeQuery("SELECT MAX(ID) AS MAXIM FROM AUTOBUZE");
-            maxAutobuze =  queryStatement.executeQuery("SELECT MAX(ID) AS MAXIM FROM DUBE");
 
-            mxD = maxDube.getInt("MAXIM");
-            mxA = maxAutobuze.getInt("MAXIM");
+        try{
+            Statement stmt = conn.createStatement();
+            Statement stmt2 = conn.createStatement();
+            ResultSet maxDube ;
+            ResultSet maxAutobuze;
+            maxDube = stmt2.executeQuery("SELECT MAX(ID) FROM DUBE");
+            maxAutobuze = stmt.executeQuery("SELECT MAX(ID) FROM AUTOBUZE");
+
+            while(maxAutobuze.next()){
+                mxA = maxAutobuze.getInt("MAX(ID)");
+                //System.out.println("A " + mxA);
+            }
+
+            while (maxDube.next()){
+                mxD = maxDube.getInt("MAX(ID)");
+                //System.out.println("D " + mxD);
+            }
         }catch (Exception e){
             System.out.println(e);
         }
@@ -254,9 +322,10 @@ public class DBAccess {
     public int getMaxFlote(){
         int m = 0;
         try{
-            ResultSet max = queryStatement.executeQuery("SELECT MAX(ID) AS MAXIM FROM FLOTE");
-            m = max.getInt("MAXIM");
-
+            ResultSet max = queryStatement.executeQuery("SELECT MAX(ID) AS M FROM FLOTE");
+            while(max.next()){
+                m = max.getInt("M");
+            }
         } catch (Exception e){
             System.out.println(e);
         }
@@ -266,8 +335,10 @@ public class DBAccess {
     public int getMaxIncarcatura(){
         int m = 0;
         try{
-            ResultSet max = queryStatement.executeQuery("SELECT MAX(ID) AS MAXIM FROM INCARCATURA");
-            m = max.getInt("MAXIM");
+            ResultSet max = queryStatement.executeQuery("SELECT MAX(ID) AS M FROM INCARCATURA");
+            while (max.next()){
+                m = max.getInt("M");
+            }
 
         } catch (Exception e){
             System.out.println(e);
@@ -278,13 +349,13 @@ public class DBAccess {
     public int getMaxItemIncarcatura(){
         int m = 0;
         try{
-            ResultSet max = queryStatement.executeQuery("SELECT MAX(ID) AS MAXIM FROM ITEMEINCARCATURA");
-            m = max.getInt("MAXIM");
-
+            ResultSet max = queryStatement.executeQuery("SELECT MAX(ID) AS M FROM ITEMEINCARCATURA");
+            while (max.next()){
+                m = max.getInt("M");
+            }
         } catch (Exception e){
             System.out.println(e);
         }
-        return m;
-    }
+        return m; }
 
     }

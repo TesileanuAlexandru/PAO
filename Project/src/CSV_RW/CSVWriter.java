@@ -15,6 +15,8 @@ public class CSVWriter {
         file = new File(path + filename);
         if (file.exists()){
             writer = new FileWriter(file, true);
+
+
         }
         else{
             file.createNewFile();

@@ -1,12 +1,13 @@
 import javax.sound.midi.Soundbank;
 import java.sql.SQLOutput;
+import java.util.List;
 import java.util.UUID;
 import java.util.concurrent.TimeUnit;
 
 public class Autobuz extends Autoturism implements TransportaOameni{
 
     private int nrLocuri;
-    public static int ID = DBAccess.getInstance().getMaxIndexAutoturisme();
+    public static int ID = DBAccess.getInstance().getMaxAutoturisme() + 1;
     public int DB_ID = -1;
 
     public int getNrLocuri() {
@@ -15,12 +16,13 @@ public class Autobuz extends Autoturism implements TransportaOameni{
 
     @Override
     public int hashCode() {
-        return DB_ID != -1 ? DB_ID : ID;
+        return DB_ID ;
     }
 
     public Autobuz(String model, int anFab, boolean isLoaded, int nrLocuri) {
         super(model, anFab, isLoaded);
         this.nrLocuri = nrLocuri;
+        DB_ID = ID;
         ID+=1;
     }
 
@@ -58,5 +60,24 @@ public class Autobuz extends Autoturism implements TransportaOameni{
         } else{
             System.out.println("Pasagerii sunt deja debarcati!");
         }
+    }
+
+    public static Object[] getAutobuzeHeader(){
+        Object[] ret = {"Model", "An Fabr.", "Nr. Locuri", "Este Incarcat", "ID", "ID Flota"};
+        return ret;
+    }
+
+    public static Object[][] formatAutobuzToTable (List<Autobuz> autobuze){
+        int len = autobuze.size();
+        Object[][] objArr = new Object[len][6];
+        for (int i = 0; i < len; ++i){
+            objArr[i][0] = autobuze.get(i).getModel();
+            objArr[i][1] = autobuze.get(i).getAnFab();
+            objArr[i][2] = autobuze.get(i).getNrLocuri();
+            objArr[i][3] = autobuze.get(i).getisLoaded();
+            objArr[i][4] = autobuze.get(i).hashCode();
+            objArr[i][5] = autobuze.get(i).idflota;
+        }
+        return objArr;
     }
 }

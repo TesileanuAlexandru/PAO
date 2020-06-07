@@ -1,5 +1,6 @@
 import java.awt.*;
 import java.util.Arrays;
+import java.util.List;
 import java.util.Collection;
 import java.util.Collections;
 import java.util.UUID;
@@ -9,7 +10,7 @@ public class Incarcatura {
     private String denumireIncarcatura;
     private int dimensiuneIncarcatura;
     ItemIncarcatura[] itemIncarcatura;
-    private static int ID = DBAccess.getInstance().getMaxIncarcatura();
+    private static int ID = DBAccess.getInstance().getMaxIncarcatura() + 1;
     public int DB_ID = -1;
     public int index = 0;
 
@@ -21,13 +22,20 @@ public class Incarcatura {
         return dimensiuneIncarcatura;
     }
 
+    public int getIndex() {
+        return index;
+    }
+
     @Override
     public int hashCode() {
-        return DB_ID != -1 ? DB_ID : ID;
+        return DB_ID ;
     }
     Incarcatura(String denumireIncarcatura, int dimensiuneIncarcatura){
+        DB_ID = ID;
+        ID +=1;
         this.denumireIncarcatura = denumireIncarcatura;
         this.itemIncarcatura = new ItemIncarcatura[dimensiuneIncarcatura];
+        this.dimensiuneIncarcatura = dimensiuneIncarcatura;
     }
 
     public void add(ItemIncarcatura item){
@@ -71,5 +79,24 @@ public class Incarcatura {
                 ", itemIncarcatura=" + Arrays.toString(itemIncarcatura) +
                 '}';
     }
+
+    public static Object[] getIncarcaturaTableHeader(){
+        Object[] ret = {"Denumire", "Dimensiune", "ID"};
+        return ret;
+    }
+
+    public static Object[][] formatIncarcaturaToObjTable(List<Incarcatura> loads){
+        int len = loads.size();
+        Object[][] arr = new Object[len][3];
+        for(int i = 0; i < len; ++i){
+            arr[i][0] = loads.get(i).getDenumireIncarcatura();
+            arr[i][1] = loads.get(i).getDimensiuneIncarcatura();
+            arr[i][2] = loads.get(i).hashCode();
+        }
+        return arr;
+
+    }
+
+
 }
 
