@@ -1,3 +1,4 @@
+import com.sun.org.apache.bcel.internal.generic.ObjectType;
 import javafx.scene.control.ComboBox;
 
 import javax.swing.*;
@@ -13,7 +14,10 @@ public class MainEntry extends JFrame {
     private JTable table1 = new JTable();
     private JScrollPane tableJpane;
     private JComboBox comboBox1;
-    private JTextField textField1;
+    private JPanel bottom_pane;
+    private JButton addButton;
+    private JButton mapButton;
+    private JButton deleteButton;
     Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
 
     MainEntry() {
@@ -27,7 +31,14 @@ public class MainEntry extends JFrame {
         List <Flota> flote = DBAccess.getInstance().getFlote();
 
 
-        
+        bottom_pane = new JPanel();
+        bottom_pane.setLayout(new BorderLayout());
+        addButton = new JButton("add");
+        deleteButton = new JButton("delete");
+        mapButton = new JButton("map");
+        bottom_pane.add(deleteButton, BorderLayout.WEST);
+        bottom_pane.add(addButton, BorderLayout.CENTER);
+        bottom_pane.add(mapButton, BorderLayout.EAST);
         table1.setRowHeight(30);
         table1 = new JTable(Flota.formatFlotaToObjTable(flote), Flota.getFlotaTableHeader());
         table1.setVisible(true);
@@ -39,8 +50,7 @@ public class MainEntry extends JFrame {
         setLayout(new BorderLayout());
         add(comboBox1,BorderLayout.NORTH);
         add(tableJpane, BorderLayout.CENTER);
-        textField1 = new JTextField();
-        add(textField1, BorderLayout.SOUTH);
+        add(bottom_pane, BorderLayout.SOUTH);
         comboBox1.addItem("Vezi Flote");
         comboBox1.addItem("Vezi Dube");
         comboBox1.addItem("Vezi Autobuze");
@@ -49,14 +59,28 @@ public class MainEntry extends JFrame {
         //comboBox1.addItem("sort asc by group");
         //comboBox1.addItem("sort desc by group");
         this.setVisible(true);
-        textField1.addActionListener(new ActionListener() {
+        deleteButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                //students = dbAccess.getAllStudentHavingGroup(textField1.getText());
-                //System.out.print(textField1.getText());
-                //table1.setModel(new DefaultTableModel(Student.formatStudentsToObjTable(students), Student.getStudentTableHeader()));
+
             }
         });
+
+        addButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+            AddObjectForm addForm = new AddObjectForm(ObjectsTypes.Dube);
+            addForm.setVisible(true);
+            }
+        });
+
+        mapButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+
+            }
+        });
+
         comboBox1.addActionListener (new ActionListener () {
             public void actionPerformed(ActionEvent e) {
 
